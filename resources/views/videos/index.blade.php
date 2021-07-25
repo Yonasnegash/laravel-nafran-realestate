@@ -22,7 +22,7 @@
                                             Created
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Edited
+                                            Status
                                         </th>
                                         <th scope="col" class="relative px-6 py-3">
                                             <span class="sr-only">Edit</span>
@@ -54,8 +54,17 @@
                                         </span>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
-                                            <span class="inline-flex text-xs leading-5 font-semibold rounded-full text-green-800">
-                                                {{ $video->updated_at->diffForHumans() }}
+                                            <span>
+                                                @if ($video->is_active == 1)
+                                                    <span class="inline-flex text-xs leading-5 font-semibold rounded-full text-green-500 bg-green-100 py-1 px-2">
+                                                        Published
+                                                    </span>
+                                                @endif
+                                                @if ($video->is_active == 0)
+                                                    <span class="inline-flex text-xs leading-5 font-semibold rounded-full text-red-500 bg-red-100 py-1 px-2">
+                                                        Not Published
+                                                    </span>
+                                                @endif
                                             </span>
                                             </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-small">

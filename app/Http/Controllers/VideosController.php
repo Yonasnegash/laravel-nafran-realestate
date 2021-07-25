@@ -53,10 +53,19 @@ class VideosController extends Controller
             $path = $request->file('video')->storeAs('public/videos', $fileNameToStore);
         }
 
+        $checkbox_value = $request->input('publish');
+
+        if($checkbox_value) {
+            $value = 1;
+        } else if ($checkbox_value == null) {
+            $value = 0;
+        }
+        
         $video = new Video;
         $video->title = $request->input('title');
         $video->user_id = auth()->user()->id;
         $video->video = $fileNameToStore;
+        $video->is_active = $value;
     
         $video->save();
         return redirect('/videos');

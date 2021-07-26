@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 use App\Models\Like;
 use App\Models\Video;
+use App\Models\Apartment;
 
 class User extends Authenticatable
 {
@@ -57,5 +58,10 @@ class User extends Authenticatable
     public function videos()
     {
         return $this->hasMany(Video::class);
+    }
+
+    public function apartments()
+    {
+        return $this->hasMany(Apartment::class);
     }
 }

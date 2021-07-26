@@ -35,5 +35,8 @@ Route::post('/posts', [PostController::class, 'store']);
 // Videos
 Route::resource('/videos', VideosController::class);
 
+// Appartments
+Route::resource('/apartments', VideosController::class);
+
 // Likes
 Route::post('/posts/{id}/likes', [PostLikeController::class, 'store'])->name('posts.like');

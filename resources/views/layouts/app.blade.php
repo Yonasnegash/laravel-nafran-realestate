@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nafran Realestate</title>
     <linK rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <style>
+            .modal {
+                transition: opacity 0.25s ease;
+            }
+            body.modal-active {
+                overflow-x: hidden;
+                overflow-y: visible !important;
+            }
+        </style>
 </head>
 <body class="bg-gray-200">
     <nav class="p-6 bg-white flex justify-between">
@@ -63,7 +72,7 @@
         {{-- sidebar start --}}
         <div class="sidebar bg-gray-700 text-white w-64 space-y-6 py-2 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
             <nav class="nav-bar">
-                <a href="#" class="block py-2.5 px-4 hover:bg-gray-800 focus:bg-gray-900 rounded transition duration-200">Apartments</a>
+                <a href="/apartments" class="block py-2.5 px-4 hover:bg-gray-800 focus:bg-gray-900 rounded transition duration-200">Apartments</a>
                 <a href="/videos" class="block py-2.5 px-4 hover:bg-gray-800 focus:bg-gray-900 rounded transition duration-200">Videos</a>
                 <a href="#" class="block py-2.5 px-4 hover:bg-gray-800 focus:bg-gray-900 rounded transition duration-200">Payments</a>
                 <a href="#" class="block py-2.5 px-4 hover:bg-gray-800 focus:bg-gray-900 rounded transition duration-200">Section 1</a>
@@ -79,6 +88,46 @@
 
     </div>
     {{-- body end --}}
+
+    <script>
+        var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    }
+      
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+    </script>
     <script src="{{ asset('js/menu_button.js') }}"></script>
 </body>
 </html>

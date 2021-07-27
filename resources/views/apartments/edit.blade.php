@@ -25,52 +25,100 @@
                         @enderror
                     </div>
                     <div class="mb-4">
-                        {{Form::file('photo_main')}}
-                        @error('photo_main')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                {{Form::file('photo_main')}}
+                                @error('photo_main')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
+                            <div>
+                                {{$apartment->main_photo}}
+                                <img width="320" height="240" src="/storage/photos/{{$apartment->main_photo}}" />
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        {{Form::file('photo_1')}}
-                        @error('photo_1')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                {{Form::file('photo_1')}}
+                                @error('photo_1')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
+                            <div>
+                                {{$apartment->photo_1}}
+                                <img width="320" height="240" src="/storage/photos/{{$apartment->photo_1}}" />
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        {{Form::file('photo_2')}}
-                        @error('photo_2')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                {{Form::file('photo_2')}}
+                                @error('photo_2')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
+                            <div>
+                                {{$apartment->photo_2}}
+                                <img width="320" height="240" src="/storage/photos/{{$apartment->photo_2}}" />
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        {{Form::file('photo_3')}}
-                        @error('photo_3')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                {{Form::file('photo_3')}}
+                                @error('photo_3')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
+                            <div>
+                                {{$apartment->photo_3}}
+                                <img width="320" height="240" src="/storage/photos/{{$apartment->photo_3}}" />
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        {{Form::file('photo_4')}}
-                        @error('photo_4')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                {{Form::file('photo_4')}}
+                                @error('photo_4')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
+                            <div>
+                                {{$apartment->photo_4}}
+                                <img width="320" height="240" src="/storage/photos/{{$apartment->photo_4}}" />
+                            </div>
+                        </div> 
                     </div>
                     <div class="mb-4">
-                        {{Form::file('photo_5')}}
-                        @error('photo_5')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                {{Form::file('photo_5')}}
+                                @error('photo_5')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
+                            <div>
+                                {{$apartment->photo_5}}
+                                <img width="320" height="240" src="/storage/photos/{{$apartment->photo_5}}" />
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-4">
                         {{Form::label('master_bedroom', 'master_bedroom', ['class' => 'sr-only'])}}

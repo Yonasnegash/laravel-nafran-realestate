@@ -79,11 +79,11 @@
                         <a href="/apartments/{{$apartment->id}}/edit" class="bg-green-500 text-white px-2 py-1 rounded font-small w-full">Edit</a>
                     </span> 
                     <span>
-                        <button id="delete" class="modal-open cursor-pointer mt-2 bg-red-500 text-white px-2 py-1 rounded font-small">Delete</button>
-                        {{-- {!! Form::open(['url' => ['videos', $video->id], 'method' => 'POST']) !!}
+                        {{-- <button id="delete" class="modal-open cursor-pointer mt-2 bg-red-500 text-white px-2 py-1 rounded font-small">Delete</button> --}}
+                        {!! Form::open(['url' => ['apartments', $apartment->id], 'method' => 'POST']) !!}
                             {{Form::hidden('_method', 'DELETE')}}
                             {{Form::submit('Delete', ['class' => 'cursor-pointer mt-2 bg-red-500 text-white px-2 py-1 rounded font-small w-full'])}}
-                        {!! Form::close() !!} --}}
+                        {!! Form::close() !!}
                     </span>
                     </td>
                 </tr>

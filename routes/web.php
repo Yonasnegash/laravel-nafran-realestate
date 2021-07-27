@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\VideosController;
+use App\Http\Controllers\ApartmentsController;
 use App\Http\Controllers\PostLikeController;
 
 // Home
@@ -34,6 +35,9 @@ Route::post('/posts', [PostController::class, 'store']);
 
 // Videos
 Route::resource('/videos', VideosController::class);
+
+// Appartments
+Route::resource('/apartments', ApartmentsController::class);
 
 // Likes
 Route::post('/posts/{id}/likes', [PostLikeController::class, 'store'])->name('posts.like');

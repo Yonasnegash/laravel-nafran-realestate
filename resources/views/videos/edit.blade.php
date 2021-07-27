@@ -15,10 +15,6 @@
                             </div>
                         @enderror
                     </div>
-                    {{-- <div class="mb-4">
-                        {{Form::label('video', 'Video', ['class' => 'sr-only'])}}
-                        {{Form::text('video', '', ['class' => 'bg-gray-100 border-2 w-full p-3 rounded-lg', 'placeholder' => 'Video'])}}
-                    </div> --}}
                     <div class="mb-4">
                         {{Form::file('video')}}
                         @error('video')
@@ -27,8 +23,14 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="mb-4">
+                        <div class="flex items-center">
+                            <input type="checkbox" name="publish" value="1" {{($video->is_active == 1 ? ' checked' : '') }} id="publish" class="mr-2">
+                            <label for="publish">Publish</label>
+                        </div>
+                    </div>
                     {{Form::hidden('_method', 'PUT')}}
-                    {{Form::submit('Upload', ['class'=>'bg-blue-500 text-white px-4 py-3 rounded font-medium w-full'])}}
+                    {{Form::submit('Upload', ['class'=>'cursor-pointer bg-blue-500 text-white px-4 py-3 rounded font-medium w-full'])}}
                 {!! Form::close() !!}
             </div>
         </div>

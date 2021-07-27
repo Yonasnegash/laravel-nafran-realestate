@@ -23,7 +23,13 @@
                             </div>
                         @enderror
                     </div>
-                    {{Form::submit('Upload', ['class'=>'bg-blue-500 text-white px-4 py-3 rounded font-medium w-full'])}}
+                    <div class="mb-4">
+                        <div class="flex items-center">
+                            <input type="checkbox" name="publish" id="publish" class="mr-2">
+                            <label for="publish">Publish</label>
+                        </div>
+                    </div>
+                    {{Form::submit('Upload', ['class'=>'cursor-pointer bg-blue-500 text-white px-4 py-3 rounded font-medium w-full'])}}
                 {!! Form::close() !!}
             </div>
         </div>
